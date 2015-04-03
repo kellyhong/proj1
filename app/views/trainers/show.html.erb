@@ -1,5 +1,8 @@
 <h3>Trainer</h3>
-<%= button_to "Create Pokemon!", new_pokemon_path, :class => "button medium", :method => :get %>
+<%= if @trainer == current_trainer
+  button_to "Create Pokemon!", new_pokemon_path, :class => "button medium", :method => :get
+end
+%>
 
 <p>Name: <%= @trainer.name if @trainer.name %></p>
 <p>Email: <%= @trainer.email if @trainer.email %></p>
